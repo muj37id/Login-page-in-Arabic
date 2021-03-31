@@ -1,0 +1,170 @@
+.container {
+    width: 1170px;
+    margin: auto;
+}
+
+/*------------------------------
+# Important Roots 
+------------------------------*/
+:root {
+    --BackColor: #355a24;
+    --MainColor : #fdbf4e;
+    --Direction: rtl;
+    --Width: 100%;
+    --SizeFont: 18px;
+}
+
+.login .parent {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.login .parent .info {
+    width: calc(var(--Width) - 75%);
+    padding: 120px 100px;
+}
+
+.login .info .icon {
+    text-align: center;
+}
+
+.login .parent .info  .icon i {
+    background-color: var(--BackColor, #406131);
+    color: var(--MainColor, #e2a432);
+    border-radius: calc(var(--Width) - 50%);
+    width: 37px;
+    height: 34px;
+    padding: 10px;
+    text-align: center;
+}
+
+.login .info .form input {
+    width: calc(var(--Width) - 15%);
+    direction: var(--Direction);
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+}
+
+.login .info .form input::placeholder {
+    font-size: var(--SizeFont);
+}
+
+.login .info .form button {
+    background-color: var(--BackColor, #406131);
+    color: var(--MainColor, #e2a432);
+    direction: var(--Direction);
+    font-size: var(--SizeFont);
+    width: var(--Width);
+    padding: 10px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.login .parent .image {
+    width: calc(var(--Width) - 55%);
+}
+
+.login .parent .image img {
+    width: var(--Width);
+}
+
+
+/*-------------------------
+# large Screen
+---------------------------*/
+@media only screen and (min-width: 991px) {
+    .container {
+        max-width: var(--Width);
+    }
+    
+    .login .parent .info {
+        padding: 100px;
+    }
+    
+    .login .info .form input {
+        width: calc(var(--Width) - 15%);
+    }
+}
+
+/*-------------------------
+# Mediam-Screen
+---------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .login .parent .info {
+        width:  calc(var(--Width) - 70%);
+        padding: 0;
+    }
+    
+    .login .info .form input {
+        width: calc(var(--Width) - 20%);
+    }
+}
+
+/*-------------------------
+# Small-Screen
+---------------------------*/
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .container {
+        max-width: 540px;
+    }
+    
+    .login .parent {
+        display: flex;
+        flex-flow: column wrap;
+        align-content: center;
+    }
+    
+    .login .parent #info {
+        width: var(--Width);
+        padding: 5px;
+        order: 2;
+    }
+    
+    .login .info .form input {
+        width: calc(var(--Width) - 8.1%);
+    }
+
+    .login .parent #image {
+        width: var(--Width);
+        order: 1;
+    }
+}
+
+/*-------------------------
+# Extra-Small Screen
+---------------------------*/
+@media only screen and (max-width: 575px) {
+    .container {
+        max-width: var(--Width);
+    }
+    
+    .login .parent {
+        display: flex;
+        flex-flow: column wrap;
+        margin-top: 0;
+        padding: 10px;
+    }
+
+    .login .parent #info {
+        width: var(--Width);
+        padding: 0;
+        order: 2;
+    }
+    
+    .login .info .form input {
+        width: calc(var(--Width) - 8.6%);
+    }
+    
+    .login .parent #image {
+        width: var(--Width);
+        order: 1;
+    }
+}
